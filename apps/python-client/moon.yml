@@ -9,6 +9,11 @@ fileGroups:
     - 'tests/**/*'
 
 tasks:
+  run:
+    command: 'python3 -m client'
+    inputs:
+      - '@globs(sources)'
+      - '@globs(tests)'
   format:
     command: 'black .'
     inputs:
