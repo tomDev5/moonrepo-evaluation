@@ -18,3 +18,8 @@ vcs:
 projects:
   - 'apps/*'
   - 'packages/*'
+
+# We want to be able to create dependencies between applications - for example, client and server
+# If we add an API call to the server, we must build and deploy it first
+constraints:
+  enforceProjectTypeRelationships: false

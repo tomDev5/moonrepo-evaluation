@@ -1,6 +1,9 @@
 language: 'python'
 type: 'application'
 
+dependsOn:
+  - 'rust-server'
+
 fileGroups:
   sources:
     - 'client/**/*'
@@ -14,6 +17,8 @@ tasks:
     inputs:
       - '@globs(sources)'
       - '@globs(tests)'
+    options:
+      runInCI: false
   format:
     command: 'black .'
     inputs:
