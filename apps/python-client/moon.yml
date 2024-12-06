@@ -1,37 +1,36 @@
-language: 'python'
-type: 'application'
+language: "python"
+type: "application"
 
 dependsOn:
-  - 'rust-server'
+  - "rust-server"
 
 fileGroups:
   sources:
-    - 'client/**/*'
-    - 'requirements.txt'
+    - "client/**/*"
+    - "requirements.txt"
   tests:
-    - 'tests/**/*'
+    - "tests/**/*"
 
 tasks:
   run:
-    command: 'python3 -m client'
+    command: "python3 -m client"
     inputs:
-      - '@globs(sources)'
-      - '@globs(tests)'
+      - "@globs(sources)"
+      - "@globs(tests)"
     options:
       runInCI: false
   format:
-    command: 'black .'
+    command: "black ."
     inputs:
-      - '@globs(sources)'
-      - '@globs(tests)'
+      - "@globs(sources)"
+      - "@globs(tests)"
   lint:
-    command: 'flake8'
+    command: "flake8"
     inputs:
-      - '@globs(sources)'
-      - '@globs(tests)'
+      - "@globs(sources)"
+      - "@globs(tests)"
   test:
-    command: 'pytest'
+    command: "pytest"
     inputs:
-      - '@globs(sources)'
-      - '@globs(tests)'
-
+      - "@globs(sources)"
+      - "@globs(tests)"
