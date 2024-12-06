@@ -1,0 +1,27 @@
+language: 'python'
+type: 'application'
+
+fileGroups:
+  sources:
+    - 'client/**/*'
+    - 'requirements.txt'
+  tests:
+    - 'tests/**/*'
+
+tasks:
+  format:
+    command: 'black .'
+    inputs:
+      - '@globs(sources)'
+      - '@globs(tests)'
+  lint:
+    command: 'flake8'
+    inputs:
+      - '@globs(sources)'
+      - '@globs(tests)'
+  test:
+    command: 'pytest'
+    inputs:
+      - '@globs(sources)'
+      - '@globs(tests)'
+
