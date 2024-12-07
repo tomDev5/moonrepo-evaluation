@@ -7,30 +7,28 @@ dependsOn:
 fileGroups:
   sources:
     - "client/**/*"
-    - "requirements.txt"
   tests:
     - "tests/**/*"
 
 tasks:
   run:
-    command: "python3 -m client"
+    command: "../../.venv/bin/python3 -m client"
     inputs:
       - "@globs(sources)"
-      - "@globs(tests)"
     options:
       runInCI: false
   format:
-    command: "black ."
+    command: "../../.venv/bin/python3 -m black ."
     inputs:
       - "@globs(sources)"
       - "@globs(tests)"
   lint:
-    command: "flake8"
+    command: "../../.venv/bin/python3 -m flake8"
     inputs:
       - "@globs(sources)"
       - "@globs(tests)"
   test:
-    command: "pytest"
+    command: "../../.venv/bin/python3 -m pytest"
     inputs:
       - "@globs(sources)"
       - "@globs(tests)"
