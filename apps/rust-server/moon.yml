@@ -19,6 +19,7 @@ tasks:
       - "@globs(sources)"
     options:
       runInCI: false
+      cache: false
   build:
     command: "cargo build"
     inputs:

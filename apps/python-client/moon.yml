@@ -17,6 +17,7 @@ tasks:
       - "@globs(sources)"
     options:
       runInCI: false
+      cache: false
   format:
     command: "../../.venv/bin/python3 -m black ."
     inputs:
