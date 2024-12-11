@@ -12,24 +12,24 @@ fileGroups:
 
 tasks:
   run:
-    command: "../../.venv/bin/python3 -m client"
+    command: "python3 -m client"
     inputs:
       - "@globs(sources)"
     options:
       runInCI: false
       cache: false
   format:
-    command: "../../.venv/bin/python3 -m black ."
+    command: "python3 -m black ."
     inputs:
       - "@globs(sources)"
       - "@globs(tests)"
   lint:
-    command: "../../.venv/bin/python3 -m flake8"
+    command: "python3 -m flake8"
     inputs:
       - "@globs(sources)"
       - "@globs(tests)"
   test:
-    command: "../../.venv/bin/python3 -m pytest"
+    command: "python3 -m pytest"
     inputs:
       - "@globs(sources)"
       - "@globs(tests)"
