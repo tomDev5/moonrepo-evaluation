@@ -1,3 +1,9 @@
+fileGroups:
+  sources:
+    - "**/*.py"
+  tests:
+    - "tests/**/*"
+
 tasks:
   format:
     command: "python3 -m black ."

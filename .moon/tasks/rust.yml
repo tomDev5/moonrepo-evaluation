@@ -1,3 +1,11 @@
+fileGroups:
+  sources:
+    - "src/**/*"
+    - "Cargo.toml"
+  tests:
+    - "benches/**/*"
+    - "tests/**/*"
+
 tasks:
   build:
     command: "cargo build"

@@ -3,9 +3,3 @@ type: "application"
 
 dependsOn:
   - "rust-server"
-
-fileGroups:
-  sources:
-    - "client/**/*"
-  tests:
-    - "tests/**/*"
