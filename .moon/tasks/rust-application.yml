@@ -1,0 +1,8 @@
+tasks:
+  run:
+    command: "cargo run"
+    inputs:
+      - "@globs(sources)"
+    options:
+      runInCI: false
+      cache: false

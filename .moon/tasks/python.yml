@@ -1,0 +1,16 @@
+tasks:
+  format:
+    command: "python3 -m black ."
+    inputs:
+      - "@globs(sources)"
+      - "@globs(tests)"
+  lint:
+    command: "python3 -m flake8"
+    inputs:
+      - "@globs(sources)"
+      - "@globs(tests)"
+  test:
+    command: "python3 -m pytest"
+    inputs:
+      - "@globs(sources)"
+      - "@globs(tests)"
