@@ -1,5 +1,5 @@
 tasks:
   run:
-    command: "python3 -m client"
+    command: "bash -c 'python3 -m $MOON_PROJECT_ID'"
     inputs:
       - "@globs(sources)"
