@@ -3,3 +3,6 @@ tasks:
     command: "bash -c 'python3 -m $MOON_PROJECT_ID'"
     inputs:
       - "@globs(sources)"
+    options:
+      runInCI: false
+      cache: false
